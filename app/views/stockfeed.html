@@ -1,0 +1,32 @@
+<p>This is the Stock Feed view.</p>
+<!-- <button ng-click="closeFeed()">click</button> -->
+
+
+  <div class="row panel mn_v1">
+    <div class="col-xs-2 col-sm-2 mn_v1_center">TICKER</div>
+    <div class="col-xs-5 col-sm-5 mn_v1_center">
+	    <div class="col-xs-6 col-sm-6 mn_v1_tleft">PRICE</div>
+	    <div class="col-xs-6 col-sm-6 mn_v1_tright">% CHANGE</div>
+    </div>
+    <div class="col-xs-5 col-sm-5 mn_v1_center">TIME</div>
+  </div>
+
+  <div class="row panel mn_v1" ng-repeat="data in feedData.collection track by $index">
+
+    <div class="col-xs-2 col-sm-2">
+	    <div class="col-xs-6 col-sm-6 mn_v1_tleft">{{ data.ticker }}</div>
+	    <div class="col-xs-6 col-sm-6 mn_v1_tright">
+		    <img ng-if="data.change > 0" ng-src="../images/market_up.png" class="mn_v1_marketup_img">
+	        <img ng-if="data.change < 0" ng-src="../images/market_down.png" class="mn_v1_marketdown_img">
+        </div>
+
+    </div>
+
+    <div class="col-xs-5 col-sm-5" ng-class="data.change >0 ? 'mn_v1_green' : (data.change <0)? 'mn_v1_red':''">
+	    <div class="col-xs-6 col-sm-6 mn_v1_tleft">{{ data.price }}</div>
+	    <div class="col-xs-6 col-sm-6 mn_v1_tright">({{ data.change }})</div>
+    </div>
+
+   	<dir-date display="data.time" class="col-xs-5 col-sm-5 mn_v1_tright">{{ data.time }}</dir-date>
+
+  </div>

@@ -1,0 +1,63 @@
+/*    --------------------------------------------------
+  :: General
+  -------------------------------------------------- */
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #353535;
+}
+.mn_v1_tcenter {
+  text-align:center;
+}
+.mn_v1_tleft {
+  text-align:left;
+}
+.mn_v1_tright {
+  text-align:right;
+}
+.mn_v1{
+  font-family:roboto-light;
+  font-size:100%;
+}
+/*  --------------------------------------------------
+  :: Table Filter
+  -------------------------------------------------- */
+.panel {
+  border: 1px solid #ddd;
+  margin-bottom: 0px;
+  background-color: #fcfcfc;
+}
+/*  --------------------------------------------------
+  :: Stockfeed Template
+  -------------------------------------------------- */
+.mn_v1_green {
+/*  color: #4bc133;*/
+  background-color:#4bc133;
+}
+.mn_v1_red {
+/*  color: #f13e2b;*/
+  background-color:#f13e2b;
+}
+.mn_v1_marketup_img{
+  align:right;
+  width:15px;
+}
+.mn_v1_marketdown_img{
+  align:right;
+  width:15px;
+}
+/*.mn_v1_ticker{
+  font-family:roboto-light;
+  font-size:100%;
+}
+.mn_v1_price{
+  font-family:roboto-light;
+  font-size:100%;
+}
+.mn_v1_change{
+  font-family:roboto-light;
+  font-size:100%;
+}
+.mn_v1_time{
+  font-family:roboto-light;
+  font-size:100%;
+}*/
