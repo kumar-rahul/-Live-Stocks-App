@@ -5,6 +5,26 @@ body {
   font-family: 'Open Sans', sans-serif;
   color: #353535;
 }
+/* Make it a marquee */
+.marquee {
+    width: 450px;
+    margin: 0 auto;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    animation: marquee 45s linear infinite;
+}
+
+.marquee:hover {
+    animation-play-state: paused
+}
+
+/* Make it move */
+@keyframes marquee {
+    0%   { text-indent: 27.5em }
+    100% { text-indent: -105em }
+}
+
 .mn_v1_tcenter {
   text-align:center;
 }
@@ -16,10 +36,13 @@ body {
 }
 .mn_v1{
   font-family:roboto-light;
-  font-size:100%;
+  font-size:120%;
+}
+.mn_v1_tbold {
+  font-weight: bold;
 }
 /*  --------------------------------------------------
-  :: Table Filter
+  :: Table
   -------------------------------------------------- */
 .panel {
   border: 1px solid #ddd;
@@ -45,19 +68,7 @@ body {
   align:right;
   width:15px;
 }
-/*.mn_v1_ticker{
-  font-family:roboto-light;
-  font-size:100%;
+.mn_v1_container{
+    width:550px;
+    margin: auto;
 }
-.mn_v1_price{
-  font-family:roboto-light;
-  font-size:100%;
-}
-.mn_v1_change{
-  font-family:roboto-light;
-  font-size:100%;
-}
-.mn_v1_time{
-  font-family:roboto-light;
-  font-size:100%;
-}*/

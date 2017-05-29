@@ -18,7 +18,8 @@ com.medianet.app.factory('Livefeed', function($websocket) {
 		      	if(methods.containsObject(modifiedObj,collection)){
 		      		var index = collection.findIndex(y => y.ticker==modifiedObj.ticker);
 	      		 	priceDiff = parseFloat(modifiedObj.price) - parseFloat(collection[index].price);
-	      		 	modifiedObj.change = ((priceDiff.toFixed(2)/parseFloat(collection[index].price))*100).toFixed(2);
+	      		 	modifiedObj.change = priceDiff.toFixed(2);
+	      		 	// modifiedObj.perchange = ((priceDiff/parseFloat(collection[index].price))*100).toFixed(2);
 		      		collection[index] = modifiedObj;
 		      	}else{
 			        collection.push(modifiedObj);
