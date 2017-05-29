@@ -1,8 +1,7 @@
 com.medianet.app.directive('dirDate', function(dateFilter) {
 	console.log("directive | dirDate");
 	function link(scope, element, attrs) {
-	    var format,
-	        timeoutId;
+	    var timeoutId;
 
 	    console.log("time", scope.display);
 
@@ -20,14 +19,18 @@ com.medianet.app.directive('dirDate', function(dateFilter) {
 
 	    scope.$watch(attrs.dirDate, function() {
 	      updateTime();
-	    });
+	    },true);
+	    // scope.$on(dataupdated, function() {
+	    // console.log("on listener");
+	    //   updateTime();
+	    // });
 
 	    element.on('$destroy', function() {
 	      $interval.cancel(timeoutId);
 	    });
 	}
     return {
-    	// restrict: 'E',
+    	restrict: 'E',
     	scope: {
     		display : '='
     	},

@@ -6,7 +6,6 @@ com.medianet.app.factory('Livefeed', function($websocket) {
 
 	      dataStream.onMessage(function(message) {
 	      	var tmpData = JSON.parse(message.data);
-	      	var modifiedData = [];
 	      	for (var i = tmpData.length - 1; i >= 0; i--) {
 	      		var priceDiff=0;
 	      		var modifiedObj = {
