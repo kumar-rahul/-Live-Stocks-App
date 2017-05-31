@@ -5,32 +5,29 @@ com.medianet.app.directive('dirDate', function(dateFilter) {
 
 	    // console.log("time", scope.display);
 
-	    function updateTime() {
-	    	var time = new Date(scope.display);
-	    	var currentTime = new Date();
-	    	if((currentTime.getMinutes() - time.getMinutes()) === 0){
-		      element.text(dateFilter("A few seconds ago"));
-	    	}else if((currentTime.getDate() - time.getDate()) === 0){
-		      element.text(dateFilter(time, "h:mm a"));
-	    	}else{
-		      element.text(dateFilter(time, "M/d/yy h:mm a"));
-	    	}
-	    }
+	    // function updateTime() {
+	    // 	var time = new Date(scope.display);
+	    // 	var currentTime = new Date();
+	    // 	if((currentTime.getMinutes() - time.getMinutes()) === 0){
+		   //    element.text(dateFilter("A few seconds ago"));
+	    // 	}else if((currentTime.getDate() - time.getDate()) === 0){
+		   //    element.text(dateFilter(time, "h:mm a"));
+	    // 	}else{
+		   //    element.text(dateFilter(time, "M/d/yy h:mm a"));
+	    // 	}
+	    // }
 
 	    scope.$watch(attrs.dirDate, function() {
-	      updateTime();
+	      element.text(dateFilter("A few seconds ago"));
+//	      updateTime();
 	    },true);
-	    // scope.$on(dataupdated, function() {
-	    // console.log("on listener");
-	    //   updateTime();
-	    // });
 
 	    element.on('$destroy', function() {
 	      $interval.cancel(timeoutId);
 	    });
 	}
     return {
-    	restrict: 'E',
+    	restrict: 'EA',
     	scope: {
     		display : '='
     	},

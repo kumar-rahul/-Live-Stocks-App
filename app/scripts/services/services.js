@@ -17,11 +17,11 @@ com.medianet.app.factory('Livefeed', function($websocket,dateFilter) {
 		      	if(methods.containsObject(modifiedObj,collection)){
 		      		var index = collection.findIndex(y => y.ticker==modifiedObj.ticker);
 		      		var prevObj = collection[index];
-		      		console.log("modified:: "+modifiedObj.time);
-		      		console.log("prev:: "+prevObj.time+" typeof: "+typeof(prevObj.time));
+		      		// console.log("modified:: "+modifiedObj.time);
+		      		// console.log("prev:: "+prevObj.time+" typeof: "+typeof(prevObj.time));
 
 		      		var timeDiff = methods.updateTime(modifiedObj.time,prevObj.time);
-		      		console.log("timeDiff:: "+timeDiff);
+		      		// console.log("timeDiff:: "+timeDiff);
 		      		if(timeDiff>=60 && timeDiff<86400){
 		      			modifiedObj.time = dateFilter(modifiedObj.time, "HH:mm a").toString();
 		      		}else if(timeDiff>=86400){
@@ -29,7 +29,6 @@ com.medianet.app.factory('Livefeed', function($websocket,dateFilter) {
 		      		}
 	      		 	priceDiff = parseFloat(modifiedObj.price) - parseFloat(collection[index].price);
 	      		 	modifiedObj.change = priceDiff.toFixed(2);
-	      		 	// modifiedObj.perchange = ((priceDiff/parseFloat(collection[index].price))*100).toFixed(2);
 
 		      		collection[index] = modifiedObj;
 		      	}else{
@@ -47,7 +46,7 @@ com.medianet.app.factory('Livefeed', function($websocket,dateFilter) {
 		      dataStream.close();
 	        },
 			containsObject: function(obj, list) {
-				console.log("service | methods | containsObject");
+				// console.log("service | methods | containsObject");
 			    var i;
 			    for (i = 0; i < list.length; i++) {
 			        if (list[i].ticker === obj.ticker) {
@@ -57,12 +56,11 @@ com.medianet.app.factory('Livefeed', function($websocket,dateFilter) {
 			    return false;
 			},
 			updateTime: function(mTime,pTime){
-				console.log("service | methods | updateTime");
+				// console.log("service | methods | updateTime");
 				var sTimestamp;
-				// var sTime = pTime;
 				var oDate = new Date();
 				if(/^[0-9]{2}(:)[0-9]{2}( AM| PM)$/g.test(pTime)){
-					console.log("pTime::(HH:mm a) "+pTime);
+					// console.log("pTime::(HH:mm a) "+pTime);
 					oDate.setHours(
 					    parseInt(pTime.substr(0, 2), 10),
 					    parseInt(pTime.substr(3, 2), 10),
@@ -71,9 +69,9 @@ com.medianet.app.factory('Livefeed', function($websocket,dateFilter) {
 					);
 					console.log("oDate:: "+oDate);
 					sTimestamp = oDate.getTime();
-					console.log("sTimestamp:: "+sTimestamp);
+					// console.log("sTimestamp:: "+sTimestamp);
 				}else if(/^[0-9]{2}(-Jan |-Feb |-Mar |-Apr |-May |-Jun |-Jul |-Aug |-Oct |-Nov |-Dec )[0-9]{2}(:)[0-9]{2}( AM| PM)$/g.test(pTime)){	
-					console.log("pTime::(dd-MMM HH:mm a) "+pTime);
+					// console.log("pTime::(dd-MMM HH:mm a) "+pTime);
 					var temp = pTime.split(" ");
 					var tempDate = temp[0].split(":");
 					var tempTime = temp[1].split(":");
@@ -86,9 +84,9 @@ com.medianet.app.factory('Livefeed', function($websocket,dateFilter) {
 					    0,
 					    0
 					);
-					console.log("oDate:: "+oDate);
+					// console.log("oDate:: "+oDate);
 					sTimestamp = oDate.getTime();
-					console.log("sTimestamp:: "+sTimestamp);
+					// console.log("sTimestamp:: "+sTimestamp);
 				}else{
 					sTimestamp = pTime;
 				}
