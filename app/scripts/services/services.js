@@ -59,7 +59,7 @@ com.medianet.app.factory('Livefeed', function($websocket,dateFilter) {
 				// console.log("service | methods | updateTime");
 				var sTimestamp;
 				var oDate = new Date();
-				if(/^[0-9]{2}(:)[0-9]{2}( AM| PM)$/g.test(pTime)){
+				if(com.medianet.constant.regex_time.test(pTime)){
 					// console.log("pTime::(HH:mm a) "+pTime);
 					oDate.setHours(
 					    parseInt(pTime.substr(0, 2), 10),
@@ -70,10 +70,10 @@ com.medianet.app.factory('Livefeed', function($websocket,dateFilter) {
 					console.log("oDate:: "+oDate);
 					sTimestamp = oDate.getTime();
 					// console.log("sTimestamp:: "+sTimestamp);
-				}else if(/^[0-9]{2}(-Jan |-Feb |-Mar |-Apr |-May |-Jun |-Jul |-Aug |-Oct |-Nov |-Dec )[0-9]{2}(:)[0-9]{2}( AM| PM)$/g.test(pTime)){	
+				}else if(com.medianet.constant.regex_day.test(pTime)){	
 					// console.log("pTime::(dd-MMM HH:mm a) "+pTime);
 					var temp = pTime.split(" ");
-					var tempDate = temp[0].split(":");
+					var tempDate = temp[0].split("-");
 					var tempTime = temp[1].split(":");
 					var tempStr = oDate.toString();
 					tempStr.replace(tempStr.substr(4,6),tempDate[1]+" "+tempDate[0]);

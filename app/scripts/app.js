@@ -10,6 +10,7 @@
  */
 var com = com || {};
 com.medianet = com.medianet || {};
+com.medianet.constant = com.medianet.constant || {};
 com.medianet.appname = 'medianetApp';
 
 com.medianet.app = angular.module(com.medianet.appname, [
