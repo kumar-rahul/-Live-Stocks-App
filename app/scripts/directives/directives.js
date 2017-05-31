@@ -3,7 +3,7 @@ com.medianet.app.directive('dirDate', function(dateFilter) {
 	function link(scope, element, attrs) {
 	    var timeoutId;
 
-	    console.log("time", scope.display);
+	    // console.log("time", scope.display);
 
 	    function updateTime() {
 	    	var time = new Date(scope.display);
