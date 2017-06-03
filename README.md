@@ -12,14 +12,14 @@ Run `grunt` for building and `grunt serve` for preview.
 Running `grunt test` will run the unit tests with karma.
 
 ## Getting Started(Windows10) (Refer to resources/LiveStockAppReadMe.docx)
-Below mentioned technologies needs to be installed:
+#Below mentioned technologies needs to be installed:
 1.	Node.js (version: v6.9.4)
 2.	Npm (version: 4.5.0)
 3.	Yeoman (version: 1.8.5)
 4.	Bower (version: 1.8.0)
 5.	Git (version: 2.12.2.windows.2)
 6.	Grunt-cli (version: v1.2.0)
-How to install? (Environment Setup):
+#How to install? (Environment Setup):
 1.	Node.js: Install node.js windows installer(.msi): https://nodejs.org/en/download/
 2.	NPM: If already installed, then upgrade npm: npm install npm@latest -g.
 Version check:
@@ -38,7 +38,7 @@ Version check: bower –version
 6.	Grunt-cli: Install grunt-cli: npm install -g grunt -cli
 Version check: grunt –version
 
-To build & run application:
-•	cd to project directory.
-•	run this command on cmd: grunt serve
+#To build & run application:
+1.	cd to project directory.
+2.	run this command on cmd: grunt serve
  

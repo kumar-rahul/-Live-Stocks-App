@@ -27,7 +27,7 @@ com.medianet.app.directive('dirDate', function(dateFilter) {
 	    });
 	}
     return {
-    	restrict: 'EA',
+    	restrict: 'E',
     	scope: {
     		display : '='
     	},

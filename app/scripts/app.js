@@ -21,7 +21,7 @@ com.medianet.app = angular.module(com.medianet.appname, [
         .state('stockfeed', {
             url: '/stockfeed',
             templateUrl: 'views/stockfeed.html',
-            controller: 'FeedCtrl'
+            controller: 'FeedController'
         });
 
      $urlRouterProvider.otherwise('stockfeed');

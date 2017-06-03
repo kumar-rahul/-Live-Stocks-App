@@ -1,7 +1,7 @@
 com.medianet.app.factory('Livefeed', function($websocket,dateFilter) {
 			console.log("service | Livefeed");
       
-	      var dataStream = $websocket('ws://stocks.mnet.website');
+	      var dataStream = $websocket(com.medianet.constant.socket_api);
 	      var collection = [];
 
 	      dataStream.onMessage(function(message) {

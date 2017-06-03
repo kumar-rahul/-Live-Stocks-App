@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name medianetApp.controller:FeedCtrl
+ * @name medianetApp.controller:FeedController
  * @description
- * # FeedCtrl
+ * # FeedController
  * Controller of the medianetApp
  */
-com.medianet.app.controller('FeedCtrl', function ($scope,$state,Livefeed) {
-  	console.log("controller | FeedCtrl");
+com.medianet.app.controller('FeedController', function ($scope,$state,Livefeed) {
+  	console.log("controller | FeedController");
 	
 	(function(){
 		$scope.feedData = Livefeed;
